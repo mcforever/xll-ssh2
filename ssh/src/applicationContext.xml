@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-3.0.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<context:component-scan base-package="com"></context:component-scan>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+		<property name="username" value="laiyang"></property>
+		<property name="password" value="laiyang"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/pojo/system/hbm/oracle/SysMenu.hbm.xml</value>
+				<value>com/pojo/system/hbm/oracle/SysRole.hbm.xml</value>
+				<value>com/pojo/system/hbm/oracle/SysDictionary.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Admin.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Classes.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Dept.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Teacher.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Course.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Student.hbm.xml</value>
+				<value>com/pojo/hbm/oracle/Grade.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+</beans>

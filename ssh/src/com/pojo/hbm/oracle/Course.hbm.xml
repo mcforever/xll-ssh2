@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+	<class name="Course" table="course" schema="laiyang">
+		<id name="id" type="java.lang.Integer">
+			<column name="id"></column>
+			<generator class="sequence">
+				<param name="sequence">seq_course_id</param>
+			</generator>
+		</id>
+		<property name="courseName" type="java.lang.String">
+			<column name="COUNAME"></column>
+		</property>
+		<property name="courseTime" type="java.lang.Integer">
+			<column name="COUTIME"></column>
+		</property>
+		<property name="credit" type="java.lang.Double">
+			<column name="CREDIT"></column>
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="MEMO"></column>
+		</property>
+		
+		<many-to-one name="teacher" class="com.pojo.Teacher" fetch="select" lazy="false">
+            <column name="TEACHERID" />
+        </many-to-one>
+        
+        <set name="gradeSet" inverse="true" lazy="true" table="grade" fetch="select">
+            <key>
+                <column name="coid" />
+            </key>
+            <one-to-many class="com.pojo.Grade" />
+        </set>
+	</class>
+</hibernate-mapping>

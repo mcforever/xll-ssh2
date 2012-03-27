@@ -1,0 +1,358 @@
+/*总体样式*/
+*{margin:0;}
+body,ul,li{ margin:0; padding:0; font:12px/22px "宋体";  }
+body{position:relative;left:50%;width:1002px;margin-left:-501px;}
+ul,li{ list-style:none ; margin:0; padding:0}
+a{ text-decoration:none; color:#333}
+a:hover{color: #03F; text-decoration:none;}
+img{ border:0}
+/*——————————————————————————————————*/
+/*顶部样式开始*/
+.top{
+	height:52px;
+	background:url(images/topbg.png) repeat-x;
+	border-bottom:1px solid #e2e2e2;
+}
+	/*LOGO样式*/
+.logo{
+	background:url(images/logo_zhongtai.png) no-repeat;
+	width:494px;
+	height:52px;
+	position:absolute;
+	float:left;
+}
+	/*顶部右边小按钮区*/
+.littlebutton{
+	position:absolute;
+	float:left;
+	right:0;
+	padding:0 20px 0 0;
+}
+/*顶部样式结束*/
+/*——————————————————————————————————*/
+/* 横向导航memu开始 */
+.nav{ 
+	background:url(images/memubg.png) repeat-x;
+	height:31px;
+}
+.nav ul{ 
+	width:900px; 
+	float:left; 
+	text-decoration:none; 
+	margin-left:30px;
+}
+.nav ul li{ 
+	float:left;
+	width:110px; 
+	height:27px; 
+	background:url(images/memu_bgline.png) no-repeat 0px 8px; 
+	text-align:center; 
+	padding-top:4px;
+}
+.nav ul li.over{
+	background:url(images/memu_bghover.png) no-repeat 0px 0px;
+} 
+.nav ul li.over a{
+	color:#073a65;
+}
+.nav a{ 
+	color:#FFFFFF;
+	font:14px/22px "宋体";
+}
+.nav a:hover{
+	color:#99dcfe;
+	text-decoration:none;
+}
+/* 横向导航memu结束 */
+/*——————————————————————————————————*/
+/* 主要内容区域 */
+.mainContent{ width:1002px; margin-top:1px}
+/* 左侧导航区 */
+.sidebar{ 
+	float:left;
+	width:203px;
+	background:#FFF;
+}
+	/* 左侧导航上方图片 */
+.left_memu_top{
+	width:203px;
+	height:43px;
+	line-height:43px;
+	display:table;
+	vertical-align:middle;
+	background:url(images/left_memu_top.png) no-repeat;
+	color:#FFF;
+	font: bold 14px/22px "宋体";
+	text-align:center;
+}
+	/* 左侧导航上方图片文字垂直居中样式 */
+.v-align{
+	vertical-align:middle;
+	display:table-cell;
+}
+/* 左侧导航内部 */
+.left_memu{ 
+	width:201px;
+	padding:10px 0; 
+	background-color:#f1f1f1; 
+	border-left:solid 1px; 
+	border-right:solid 1px; 
+	border-color:#d4d4d4;
+}
+	/* 左侧导航底部图片 */
+.left_memu_bottom{ 
+	background:url(images/left_memu_bottom.png) no-repeat; 
+	width:203px; 
+	height:5px;
+}
+.left_memu_list{ 
+	background:#f1f1f1; 
+	width:185px;
+	padding:0 8px;
+}
+.left_memu_list_top{ 
+	background:url(images/usericon1.png) no-repeat 12px 2px; 
+	width:145px; 
+	height:26px; 
+	font: bold 12px/20px"宋体"; 
+	color:#0c3865; 
+	line-height:26px; 
+	border-bottom:solid 1px #dadada; 
+	padding-left:40px;
+}
+.left_memu_list ul li{ 
+	background:url(images/usericon2.png) no-repeat 50px 9px; 
+	height:24px; 
+	font: 12px/20px"宋体"; 
+	color:#454545; 
+	line-height:24px; 
+	border-bottom:solid 1px #dadada; 
+	padding-left:65px;
+}
+	/* 左侧导航点击效果 */
+.left_memu_list ul li.over{ 
+	background:url(images/usericon2.png) no-repeat 50px 9px; 
+	height:24px; 
+	font: 12px/20px"宋体"; 
+	color:#454545; 
+	line-height:24px; 
+	border-bottom:solid 1px #dadada; 
+	padding-left:65px;
+}
+.left_memu_list ul li.over a{
+	color:#bb7223;
+}
+/* 左侧导航样式结束 */
+/*——————————————————————————————————*/
+/* 中间区域 */
+.main{ 
+	float:right;
+	width:799px;
+	background:#FFF;
+}
+/* 当前位置样式 */
+.dht{
+	font:13px/20px "宋体";
+	color:#666; 
+	margin:0 0 0 10px;
+}
+.maincard{
+	width:779px;
+	border:1px solid #ccc;
+	border-bottom:4px #CCC solid;
+	margin:1px 10px 5px;
+}
+.maincard_top{
+	width:779px;
+	height:32px;
+	background:url(images/maincard_topbg.png);
+	display:table;
+}
+.maincard_top_txt{
+	float:left;
+	font: bold 14px/22px "宋体";
+	color:#006;
+	height:32px;
+	line-height:30px;
+	display:table-cell;
+	vertical-align:middle;
+	margin-left:40px;
+}
+
+/* table表格样式 */
+.list_table_border
+{
+	border:#d4d4d4 1px solid;
+	background:#fff;
+	margin:5px;
+}
+.list_table a
+{
+	text-decoration:none;
+}
+.list_table thead th
+{
+	background:url(images/list_box_th.png) repeat-x left bottom;
+	height:26px;
+	line-height:26px;
+	color:#000000;
+	font-weight:normal;
+}
+.list_table tbody td
+{
+	color:#000;
+	border-right:#fff 1px solid;
+	padding:3px;
+}
+.list_table tbody td a
+{
+	color:#007eff;
+	text-decoration:none;
+}
+.list_table tbody td a:hover
+{
+	color:#4e0756;
+	text-decoration:none;
+}
+.list_table tbody tr.even td
+{
+	background:#f4f2f7;
+}
+.list_table tbody tr.odd td
+{
+}
+.list_table tbody tr.over td
+{
+	background:#e7e8ed;
+}
+.tdleft
+{
+	text-align:left;}
+.tdright
+{
+	text-align:right;}
+.tdcenter
+{
+	text-align:center;}
+
+/* 卡片 */
+.card_border{
+	border:#d4d4d4 1px solid;
+	border-bottom:0px;
+	border-right:0px;
+	background:#fff;
+	margin:5px;
+}
+.card{
+	background:#fff;
+}
+.card tbody td{
+	border-right:1px solid #d4d4d4;
+	border-bottom:1px solid #d4d4d4;
+	height:30px;
+}
+.card_left{
+	text-align:right;
+	background:#f2f2f2;
+}
+.card_right{
+	text-align:left;
+	background:#fff;
+	padding-left:5px;
+}
+.card_question_left{
+	text-align:left;
+	background:#fff;
+}
+.card_question_right{
+	text-align:right;
+	background:#fff;
+}
+.card_answer_left{
+	text-align:left;
+	background:#fff;
+	color:#D75509;
+}
+.card_answer_right{
+	text-align:right;
+	background:#fff;
+	color:#D75509;
+}
+.splitline{
+	margin:10px 40px;
+	line-height:1px;
+	background:#d5d5d5;
+}
+/* 输入框 */
+.input_text{
+	border:#c4c4c4 1px solid;
+}
+/* 下拉框 */
+.input_select{
+	border:#c4c4c4 1px solid;
+	height:22px;
+}
+/* 文本区域 */
+.textarea{
+	border:#c4c4c4 1px solid;
+	margin:5px 0;
+}
+/* button */
+.btn {
+	background: url(images/bg_buttons.png) repeat-x top; 
+	cursor: pointer;
+	border: 1px solid #0D87AE!important; 
+	color: #fff; 
+	font-size: 12px; 
+	padding: 3px 10px; 
+	boirder-radius: 3px; 
+	-moz-border-radius: 3px;
+	font-weight:normal; 
+	border: none;
+}
+.btn:hover {
+	background: url(images/bg_buttons.png) 0 -50px;
+	border: 1px solid #005977; 
+	cursor: pointer;
+}
+/*——————————————————————————————————*/
+/* 版权所有 */
+.footer{
+	width:660px;
+	float:left;
+	font:12px/25px "宋体";  
+	text-align:center; 
+	height:63px; 
+	color:#666; 
+	margin:8px 170px;
+}
+table.window {
+	font: 宋体 9pt; position: absolute;  
+}
+table.window td.cross-left-top {
+	background-image: url('images/window-left-top.gif'); width=4px; height= 25px;
+}
+table.window td.cross-middle-top {
+	background-image: url('images/window-middle-top.gif'); height= 25px;
+}
+table.window td.cross-right-top {
+	background-image: url('images/window-right-top.gif'); width=4px; height= 25px;
+}
+table.window td.cross-right-top {
+	background-image: url('images/window-right-top.gif'); width=4px; height= 25px;
+}
+table.window td.cross-left-middle {
+	background-image: url('images/window-left-middle.gif'); width=4px;
+}
+table.window td.cross-right-middle {
+	background-image: url('images/window-left-middle.gif'); width=4px;
+}
+table.window td.cross-left-bottom {
+	background-image: url('images/window-left-bottom.gif'); width=4px; height=4px;
+}
+table.window td.cross-middle-bottom {
+	background-image: url('images/window-middle-bottom.gif'); height= 4px;
+}
+table.window td.cross-right-bottom {
+	background-image: url('images/window-right-bottom.gif'); width=4px; height=4px;
+}

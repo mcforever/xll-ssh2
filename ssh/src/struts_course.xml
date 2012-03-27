@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="course" extends="struts-default">
+	<action name="queryCoursePageAction" class="courseAction" method="queryCoursePage">
+		<result name="success">page/course/showCourseList.jsp</result>
+	</action>
+	<action name="courseDetailAction" class="courseAction" method="courseDetail">
+		<result name="success">page/course/classesDetail.jsp</result>
+	</action>
+	<action name="courseEditAction" class="courseAction" method="courseEdit">
+		<result name="success">page/course/classesEdit.jsp</result>
+	</action>
+	<action name="saveCourseAction" class="courseAction" method="courseSave">
+		<result name="success" type="chain">
+			<param name="actionName">queryCoursePageAction</param>
+		</result>
+		<result name="input">page/course/courseEdit.jsp</result>
+	</action>
+	<action name="courseDeleteAction" class="courseAction" method="courseDelete">
+		<result name="success" type="chain">
+			<param name="actionName">queryCoursePageAction</param>
+		</result>
+	</action>
+	<action name="studentSelectCourseAction" class="courseAction" method="studentSelectCourse">
+		<result name="success" type="chain">
+			<param name="actionName">queryCoursePageAction</param>
+		</result>
+		<result name="input" type="chain">
+			<param name="actionName">queryCoursePageAction</param>
+		</result>
+	</action>
+	<action name="selectedCourseAction" class="courseAction" method="selectedCourse">
+		<result name="success">page/course/courseSelected.jsp</result>
+	</action>
+</package>
+</struts>

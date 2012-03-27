@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="login" extends="struts-default">
+		<action name="mainMenuAction" class="loginAction" method="queryMainMenu">
+			<result name="success">/common/top.jsp</result>
+		</action>
+		<action name="leftMenuAction" class="loginAction" method="queryLeftMenu">
+			<result name="success">/common/left.jsp</result>
+		</action>
+		<action name="adminLoginAction" class="loginAction" method="adminLoginAction">
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="doLoginAction" class="loginAction" method="doLoginAction">
+			<result name="success">/main.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="modifyPasswordAction" class="loginAction" method="modifyPassword">
+			<result name="success">/modifyPassword.jsp</result>
+		</action>
+		<action name="savePasswordAction" class="loginAction" method="savePassword">
+			<result name="success">/modifyPassword.jsp</result>
+			<result name="input">/modifyPassword.jsp</result>
+		</action>
+		<action name="logoutAction" class="loginAction" method="logoutAction">
+			<result name="success">/login.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

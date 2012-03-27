@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+	<class name="Teacher" table="teacher" schema="laiyang">
+		<id name="id" type="java.lang.Integer">
+			<column name="id"></column>
+			<generator class="sequence">
+				<param name="sequence">seq_teacher_id</param>
+			</generator>
+		</id>
+		<property name="teacherName" type="java.lang.String">
+			<column name="TEANAME" length="100"></column>
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" length="100"></column>
+		</property>
+		<property name="tposition" type="java.lang.Integer">
+			<column name="TEAPOSITION"></column>
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="MEMO" length="600"></column>
+		</property>
+		
+		<many-to-one name="dept" class="com.pojo.Dept" fetch="select" lazy="false">
+            <column name="DEPTID" />
+        </many-to-one>
+        
+        <set name="classesSet" inverse="true" lazy="true" table="classes"
+			fetch="select">
+			<key>
+				<column name="classesid" />
+			</key>
+			<one-to-many class="com.pojo.Classes" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="struts_student.xml" />
+	<include file="struts_login.xml" />
+	<include file="struts_classes.xml" />
+	<include file="struts_teacher.xml" />
+	<include file="struts_course.xml" />
+	<include file="struts_grade.xml" />
+</struts>    
