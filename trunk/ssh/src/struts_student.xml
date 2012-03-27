@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="student" extends="struts-default">
+	<action name="queryStudentPageAction" class="studentAction" method="queryStudentPage">
+		<result name="success">page/student/showStudentList.jsp</result>
+	</action>
+	<action name="studentDetailAction" class="studentAction" method="studentDetail">
+		<result name="success">page/student/studentDetail.jsp</result>
+	</action>
+	<action name="studentEditAction" class="studentAction" method="studentEdit">
+		<result name="success">page/student/studentEdit.jsp</result>
+	</action>
+	<action name="saveStudentAction" class="studentAction" method="studentSave">
+		<result name="success" type="chain">
+			<param name="actionName">queryStudentPageAction</param>
+		</result>
+		<result name="input">page/student/studentEdit.jsp</result>
+	</action>
+	<action name="studentDeleteAction" class="studentAction" method="studentDelete">
+		<result name="success" type="chain">
+			<param name="actionName">queryStudentPageAction</param>
+		</result>
+		<result name="input" type="chain">
+			<param name="actionName">queryStudentPageAction</param>
+		</result>
+	</action>
+	<action name="updateStudyStateAction" class="studentAction" method="studyStateUpdate">
+		<result name="success" type="chain">
+			<param name="actionName">queryStudentPageAction</param>
+		</result>
+	</action>
+	<action name="compareYearAction" class="studentAction" method="compareYear">
+		<result name="success">page/student/compareYear.jsp</result>
+	</action>
+	
+</package>
+</struts>
+

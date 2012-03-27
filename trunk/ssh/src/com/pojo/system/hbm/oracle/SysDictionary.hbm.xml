@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo.system">
+	<class name="SysDictionary" table="sysdictionary" schema="laiyang" >
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="sequence">
+				<param name="sequence">seq_sysdictionary_id</param>
+			</generator>
+		</id>
+		<property name="dataTypeCode" type="java.lang.String">
+			<column name="DATATYPECODE" length="100"></column>
+		</property>
+		<property name="dataTypeDescription" type="java.lang.String">
+			<column name="DATATYPEDESCRIPTION" length="200"></column>
+		</property>
+		<property name="dataID" type="java.lang.Integer">
+			<column name="DATAID"></column>
+		</property>
+		<property name="dataDescription" type="java.lang.String">
+			<column name="DATADESCRIPTION" length="200"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

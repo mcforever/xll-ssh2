@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="baseManagerImpl" class="com.service.impl.BaseManagerImpl">
+		<property name="baseDao" ref ="baseDaoImpl"></property>
+	</bean>
+	<bean id="sysRoleManagerImpl" class="com.service.impl.SysRoleManagerImpl" parent="baseManagerImpl">
+		<property name="sysRoleDao" ref="sysRoleDaoImpl"></property>
+	</bean>
+	<bean id="sysMenuManagerImpl" class="com.service.impl.SysMenuManagerImpl" parent="baseManagerImpl">
+		<property name="menuDao" ref="menuDaoImpl"></property>
+	</bean>
+	<bean id="studentManagerImpl" class="com.service.impl.StudentManagerImpl" parent="baseManagerImpl">
+		<property name="studentDao" ref="studentDaoImpl"></property>
+	</bean>
+	<bean id="adminManagerImpl" class="com.service.impl.AdminManagerImpl" parent="baseManagerImpl">
+		<property name="adminDao" ref="adminDaoImpl"></property>
+	</bean>
+	<bean id="teacherManagerImpl" class="com.service.impl.TeacherManagerImpl" parent="baseManagerImpl">
+		<property name="teacherDao" ref="teacherDaoImpl"></property>
+	</bean>
+	<bean id="classesManagerImpl" class="com.service.impl.ClassesManagerImpl" parent="baseManagerImpl">
+		<property name="classesDao" ref="classesDaoImpl"></property>
+	</bean>
+	<bean id="courseManagerImpl" class="com.service.impl.CourseManagerImpl" parent="baseManagerImpl">
+		<property name="courseDao" ref="courseDaoImpl"></property>
+	</bean>
+	<bean id="deptManagerImpl" class="com.service.impl.DeptManagerImpl" parent="baseManagerImpl">
+		<property name="deptDao" ref="deptDaoImpl"></property>
+	</bean>
+	<bean id="gradeManagerImpl" class="com.service.impl.GradeManagerImpl" parent="baseManagerImpl">
+		<property name="gradeDao" ref="gradeDaoImpl"></property>
+	</bean>
+	
+</beans>

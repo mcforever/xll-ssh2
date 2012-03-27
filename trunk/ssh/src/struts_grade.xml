@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="grade" extends="struts-default">
+	<action name="queryGradePageAction" class="gradeAction" method="queryGradePage">
+		<result name="success">page/grade/showGradeList.jsp</result>
+	</action>
+	<action name="gradeDetailAction" class="gradeAction" method="gradeDetail">
+		<result name="success">page/grade/gradeDetail.jsp</result>
+	</action>
+	<action name="enterScoreAction" class="gradeAction" method="scoreEnter">
+		<result name="success">page/grade/gradeEnter.jsp</result>
+	</action>
+	
+	<action name="saveGradeAction" class="gradeAction" method="gradeSave">
+		<result name="success" type="chain">
+			<param name="actionName">queryGradePageAction</param>
+		</result>
+		<result name="input">page/grade/gradeEnter.jsp</result>
+	</action>
+	<action name="deleteGradeAction" class="gradeAction" method="deleteGrade">
+		<result name="success" type="chain">
+			<param name="actionName">queryGradePageAction</param>
+		</result>
+	</action>
+	
+</package>
+</struts>

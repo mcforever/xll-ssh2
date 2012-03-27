@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+	<class name="Student" table="student" schema="laiyang">
+		<id name="id" type="java.lang.Integer">
+			<column name="id"></column>
+			<generator class="sequence">
+				<param name="sequence">seq_student_id</param>
+			</generator>
+		</id>
+		<property name="studentName" type="java.lang.String">
+			<column name="SNAME" length="100"></column>
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" length="100"></column>
+		</property>
+		<property name="sex" type="java.lang.Integer">
+			<column name="SEX"></column>
+		</property>
+		<property name="birthday" type="java.util.Date">
+			<column name="BIRTHDAY"></column>
+		</property>
+		<property name="orientation" type="java.lang.Integer">
+			<column name="ORIENTATION"></column>
+		</property>
+		<property name="enrollDate" type="java.util.Date">
+			<column name="ENROLLDATE"></column>
+		</property>
+		<property name="telephone" type="java.lang.String">
+			<column name="TELEPHONE" length="100"></column>
+		</property>
+		<property name="schooling" type="java.lang.Integer">
+			<column name="SCHOOLING"></column>
+		</property>
+		<property name="studyState" type="java.lang.Integer">
+			<column name="STUDYSTATE"></column>
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="MEMO" length="600"></column>
+		</property>
+		
+		<many-to-one name="classes" class="com.pojo.Classes" fetch="select" lazy="false" >
+            <column name="CLASSID" />
+        </many-to-one>
+		<many-to-one name="dept" class="com.pojo.Dept" fetch="select" lazy="false">
+            <column name="DEPTID" />
+        </many-to-one>
+        
+        <set name="gradeSet" inverse="true" lazy="true" table="grade"
+			fetch="select">
+			<key>
+				<column name="sid" />
+			</key>
+			<one-to-many class="com.pojo.Grade" />
+		</set>
+	</class>
+</hibernate-mapping>

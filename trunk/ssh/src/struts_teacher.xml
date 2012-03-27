@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="teacher" extends="struts-default">
+	<action name="queryTeacherPageAction" class="teacherAction" method="queryTeacherPage">
+		<result name="success">page/teacher/showTeacherList.jsp</result>
+	</action>
+	<action name="teacherDetailAction" class="teacherAction" method="teacherDetail">
+		<result name="success">page/teacher/teacherDetail.jsp</result>
+	</action>
+	<action name="teacherEditAction" class="teacherAction" method="teacherEdit">
+		<result name="success">page/teacher/teacherEdit.jsp</result>
+	</action>
+	<action name="saveTeacherAction" class="teacherAction" method="teacherSave">
+		<result name="success" type="chain">
+			<param name="actionName">queryTeacherPageAction</param>
+		</result>
+		<result name="input">page/teacher/teacherEdit.jsp</result>
+	</action>
+	<action name="teacherDeleteAction" class="teacherAction" method="teacherDelete">
+		<result name="success" type="chain">
+			<param name="actionName">queryTeacherPageAction</param>
+		</result>
+	</action>
+</package>
+</struts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="classes" extends="struts-default">
+	<action name="queryClassesPageAction" class="classesAction" method="queryClassesPage">
+		<result name="success">page/classes/showClassesList.jsp</result>
+	</action>
+	<action name="classesDetailAction" class="classesAction" method="classesDetail">
+		<result name="success">page/classes/classesDetail.jsp</result>
+	</action>
+	<action name="classesEditAction" class="classesAction" method="classesEdit">
+		<result name="success">page/classes/classesEdit.jsp</result>
+	</action>
+	<action name="saveClassesAction" class="classesAction" method="classesSave">
+		<result name="success" type="chain">
+			<param name="actionName">queryClassesPageAction</param>
+		</result>
+		<result name="input">page/classes/classesEdit.jsp</result>
+	</action>
+	<action name="classesDeleteAction" class="classesAction" method="classesDelete">
+		<result name="success" type="chain">
+			<param name="actionName">queryClassesPageAction</param>
+		</result>
+	</action>
+	
+</package>
+</struts>

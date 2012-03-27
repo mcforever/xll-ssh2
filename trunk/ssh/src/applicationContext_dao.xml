@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="baseDaoImpl" class="com.dao.impl.BaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="menuDaoImpl" parent="baseDaoImpl" class="com.dao.impl.MenuDaoImpl"></bean>	
+	
+	<bean id="adminDaoImpl" parent="baseDaoImpl" class="com.dao.impl.AdminDaoImpl"></bean>	
+	
+	<bean id="sysRoleDaoImpl" parent="baseDaoImpl" class="com.dao.impl.SysRoleDaoImpl"></bean>	
+	
+	<bean id="studentDaoImpl" parent="baseDaoImpl" class="com.dao.impl.StudentDaoImpl"></bean>	
+	
+	<bean id="teacherDaoImpl" parent="baseDaoImpl" class="com.dao.impl.TeacherDaoImpl"></bean>
+	
+	<bean id="classesDaoImpl" parent="baseDaoImpl" class="com.dao.impl.ClassesDaoImpl"></bean>
+	
+	<bean id="courseDaoImpl" parent="baseDaoImpl" class="com.dao.impl.CourseDaoImpl"></bean>
+	
+	<bean id="deptDaoImpl" parent="baseDaoImpl" class="com.dao.impl.DeptDaoImpl"></bean>
+	
+	<bean id="gradeDaoImpl" parent="baseDaoImpl" class="com.dao.impl.GradeDaoImpl"></bean>
+	
+</beans>

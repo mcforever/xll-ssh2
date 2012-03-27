@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo.system">
+	<class name="SysMenu" table="sysmenu" schema="laiyang">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="sequence">
+				<param name="sequence">seq_sysmenu_id</param>
+			</generator>
+		</id>
+		<property name="menuName" type="java.lang.String">
+			<column name="MENUNAME"></column>
+		</property>
+		<property name="url" type="java.lang.String">
+			<column name="URL"></column>
+		</property>
+		<property name="menuIndex" type="java.lang.Integer">
+			<column name="MENUINDEX"></column>
+		</property>
+		<property name="parentID" type="java.lang.Integer">
+			<column name="PARENTMENUID"></column>
+		</property>
+		 
+<!--		 设置父节点 -->
+<!--		<many-to-one name="parent" column="PARENTMENUID" class="SysMenu"></many-to-one>-->
+<!---->
+<!--		 设置子节点 -->
+<!--		<set name="childMenuSet" lazy="false" cascade="all">-->
+<!--			<key column="PARENTMENUID"></key>-->
+<!--			<one-to-many class="SysMenu"/>-->
+<!--		</set>-->
+	</class>
+</hibernate-mapping>

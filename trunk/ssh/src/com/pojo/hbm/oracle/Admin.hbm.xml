@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+	<class name="Admin" table="admin" schema="laiyang">
+		<id name="id" type="java.lang.Integer">
+			<column name="id"></column>
+			<generator class="sequence">
+				<param name="sequence">seq_admin_id</param>
+			</generator>
+		</id>
+		<property name="adminName" type="java.lang.String">
+			<column name="ADMINNAME"  length="100"></column>
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD"  length="100"></column>
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="MEMO"  length="600"></column>
+		</property>
+	</class>
+</hibernate-mapping>
