@@ -19,7 +19,7 @@
   <tr>
     <td class="headTable">
       <div id="system_logo">
-      	<img src="images/sys_logo.gif">
+      	<img src="images/sysLogo.png">
       </div>
       <div id="sysAnnounce">
       	<span id="NewAspAnnounce"></span>
