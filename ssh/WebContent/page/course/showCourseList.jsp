@@ -26,7 +26,7 @@ var courseID;
  
 //单击获取id
 function selectValue(obj){
-	courseID = obj;
+	courseID = obj.value;
 //	var temp = document.getElementById("selectID_" + obj).checked;
 //	if(temp==true){
 //		document.getElementById("selectID_" + obj).checked = true;
@@ -37,10 +37,10 @@ function selectValue(obj){
 }
 
 //双击显示某条记录的信息
-function showDetail(){
-	var url = "courseDetailAction.html?course.id=" + courseID;
-	document.location.href = url;
-}
+//function showDetail(){
+//	var url = "courseDetailAction.html?course.id=" + courseID;
+//	document.location.href = url;
+//}
 
 
 
@@ -107,28 +107,12 @@ function selectCourse(form){
 		alert("您无权限进行此操作");
 		return false;
 	}
-	var courseIDs = new Array();
-	var count = 0;
-	for (var i=0;i<form.elements.length;i++){
-      	var e = form.elements[i];
-      	if (e.checked==true){
-      		count = courseIDs.push(e.value);
-      	}
-      
-    }
+	
     
-	if(count == 0){
+	if(courseID == null || courseID == ""){
 		alert("请先选择一条的课程记录");
 		return false;
-	}else if(count == 1){
-		for (var i=0;i<form.elements.length;i++){
-	      	var e = form.elements[i];
-	      	if (e.checked==true){
-	      		count = courseIDs.push(e.value);
-	      		courseID = e.value;
-	      	}
-	      
-	    }
+	}else {
 //	    if(userLevel == 0){  //学生
 //	    	var url = "studentSelectCourseViewAction.html?option=" + str + "&courseid=" + courseID + "&studentid=" + userid;
 //		}
@@ -141,9 +125,6 @@ function selectCourse(form){
 			document.location.href = url;
 		}
 	    
-	}else{
-		alert("请选择一条课程记录");
-		return false;
 	}
 	
 }
@@ -269,7 +250,7 @@ function toSubmit(){
 			<tr onmouseover="this.style.backgroundColor = '#FFFFFF'"
 				style="CURSOR: hand" onmouseout="this.style.backgroundColor = ''"
 				bgColor="#ebf2f9" id="${id }" value="${id }" 
-				onclick="selectValue('${id}')">
+				onclick="selectValue(this)">
 
 <!--				<td noWrap align="center"><input-->
 <!--					style="width: 13px; height: 13px" type="checkbox" value="${id }"-->

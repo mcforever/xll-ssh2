@@ -73,11 +73,11 @@
 	<s:form id="form1" name="form1" action="" method="post">
 	<input type="hidden" id="sessionLevel" name="sessionLevel" value="${sessionLevel }"/>
 		<tr>
-			<th noWrap align="center" width="50"
-				background="images/img/th_bg.gif"><input class="button"
-				id="submitOtherSelect" style="WIDTH: 30px; HEIGHT: 18px"
-				onclick="CheckOthers(this.form)" type="button" value="全选"
-				name="buttonOtherSelect"></th>
+<!--			<th noWrap align="center" width="50"-->
+<!--				background="images/img/th_bg.gif"><input class="button"-->
+<!--				id="submitOtherSelect" style="WIDTH: 30px; HEIGHT: 18px"-->
+<!--				onclick="CheckOthers(this.form)" type="button" value="全选"-->
+<!--				name="buttonOtherSelect"></th>-->
 			<th noWrap align="center" width="10%"
 				background="images/img/th_bg.gif" height="25"><font
 				color="#ffffff"><strong>课程编号</strong></font></th>
@@ -103,14 +103,14 @@
 				bgColor="#ebf2f9" id="${course.id }" value="${course.id }"
 				onclick="selectValue('${course.id}')">
 
-				<td noWrap align="center"><input
-					style="width: 13px; height: 13px" type="checkbox" value="${course.id }"
-					name="selectID" id="selectID_${course.id }"></td>
+<!--				<td noWrap align="center"><input-->
+<!--					style="width: 13px; height: 13px" type="checkbox" value="${course.id }"-->
+<!--					name="selectID" id="selectID_${course.id }"></td>-->
 				<td align="center"><s:property value="course.id" /></td>
-				<td align="center"><a href="courseDetailAction.html?course.id=${course.id }"><s:property value="course.courseName" /></a></td>
+				<td align="center"><s:property value="course.courseName" /></td>
 				<td align="center"><s:property value="course.teacher.teacherName" /></td>
 				<td align="center"><s:property value="course.courseTimeStr" /></td>
-				<td align="center"><s:property value="credit" /></td>
+				<td align="center"><s:property value="course.credit" /></td>
 			</tr>
 		</s:iterator>
 	</s:form>
