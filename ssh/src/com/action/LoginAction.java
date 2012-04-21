@@ -134,6 +134,7 @@ public class LoginAction extends BaseAction {
 	
 
 	public String modifyPassword(){
+		msg = "0";
 		return SUCCESS;
 	}
 	
@@ -144,6 +145,9 @@ public class LoginAction extends BaseAction {
 			
 			try {
 				this.studentManager.saveStudent(bean);
+				Map<String, Object> session = ActionContext.getContext().getSession();
+				session.remove("sessionUser");
+				session.put("sessionUser", new SysUser(bean.getId(), bean.getStudentName(), 1, bean.getPassword()));
 				msg = "1";
 				return SUCCESS;
 			} catch (Exception e){
@@ -158,6 +162,9 @@ public class LoginAction extends BaseAction {
 			try {
 				this.teacherManager.saveOrUpdateTeacher(bean);
 				msg = "1";
+				Map<String, Object> session = ActionContext.getContext().getSession();
+				session.remove("sessionUser");
+				session.put("sessionUser", new SysUser(bean.getId(), bean.getTeacherName(), 2, bean.getPassword()));
 				return SUCCESS;
 			} catch (Exception e){
 				e.printStackTrace();
@@ -171,6 +178,9 @@ public class LoginAction extends BaseAction {
 			try {
 				this.adminManager.saveOrUpdateAdmin(bean);
 				msg = "1";
+				Map<String, Object> session = ActionContext.getContext().getSession();
+				session.remove("sessionUser");
+				session.put("sessionUser", new SysUser(bean.getId(), bean.getAdminName(), 3, bean.getPassword()));
 				return SUCCESS;
 			} catch (Exception e){
 				e.printStackTrace();
