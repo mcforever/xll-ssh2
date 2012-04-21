@@ -56,6 +56,11 @@ public class StudentAction extends BaseAction {
 //		page.setHql2(hql2);
 //		page = studentManager.queryStudentPage(page);
 		
+		//学生只能看见自己的信息记录
+		if(this.getCurrentUser().getUserLevel() == 1){
+			queryStudent = studentManager.getStudentByID(this.getCurrentUser().getId());
+		}
+		
 		page = studentManager.getStudentPage(page,queryStudent);
 		List<Student> result = page.getResult();
 		for (Student stu : result) {
