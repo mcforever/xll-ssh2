@@ -19,7 +19,6 @@ function goBack(){
 }
 function saveGrade(){
 	var gradeID = document.getElementById("gradeid");
-	alert(gradeID.value);
 	var url = "saveGradeAction.html?gradeid=" + gradeID.value;
 	document.form1.action = url;
 	document.form1.submit();
