@@ -25,7 +25,7 @@ function goSave(){
 			    var url = "savePasswordAction.html";
 			    document.modifyPasswordform.action = url;
 				document.modifyPasswordform.submit();
-			    form.submit();
+//			    form.submit();
 		    }
 		}else{
 			alert("两次输入的密码不相同,请从新输入！！！");
@@ -49,6 +49,16 @@ function goNull(){
 
 </script>
 
+<c:if test="${msg == 1}">
+	<script type="text/javascript">
+		alert("密码保存成功");
+	</script>
+</c:if>
+<c:if test="${msg == 2}">
+	<script type="text/javascript">
+		alert("密码保存失败");
+	</script>
+</c:if>
 <body>
 <form name="modifyPasswordform" method="post">
 <table cellSpacing="1" cellPadding="3" width="99%" bgColor="#6298e1" border="0">
