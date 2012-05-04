@@ -3,6 +3,20 @@
 "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="login" extends="struts-default">
+	
+		<interceptors>
+			<interceptor name="sysInterceptor" class="com.interceptor.SysInterceptor">
+			</interceptor>
+			<interceptor-stack name="myAdminStack">
+				<interceptor-ref name="sysInterceptor"></interceptor-ref> 
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myAdminStack" />
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		
 		<action name="mainMenuAction" class="loginAction" method="queryMainMenu">
 			<result name="success">/common/top.jsp</result>
 		</action>
@@ -15,6 +29,7 @@
 		<action name="doLoginAction" class="loginAction" method="doLoginAction">
 			<result name="success">/main.jsp</result>
 			<result name="input">/login.jsp</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 		<action name="modifyPasswordAction" class="loginAction" method="modifyPassword">
 			<result name="success">/modifyPassword.jsp</result>
