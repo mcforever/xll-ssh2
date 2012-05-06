@@ -176,7 +176,7 @@ function toSubmit(){
 						<tr>
 
 							<td noWrap align="left">学生姓名：<input class="textfield"
-								size="18" name="queryStudent.studentName" id="studentName"></td>
+								size="18" name="queryStudent.studentName" id="studentName" value="${queryStudent.studentName }"></td>
 							<td>所在班级：<s:select id="classesid" name="queryStudent.classes.id"
 								list="classesList" theme="simple" listKey="id"
 								listValue="classesName" label="所在班级：" headerKey=""
